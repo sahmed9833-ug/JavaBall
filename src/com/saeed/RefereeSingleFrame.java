@@ -159,7 +159,7 @@ public class RefereeSingleFrame extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(new JFrame(), "One or more fields are empty.", "Error", JOptionPane.ERROR_MESSAGE);
             }
             else{
-                Test.addNewRef(firstNameField.getText(), lastNameField.getText(), qualificationField.getText(), Integer.parseInt(allocationsField.getText()), homeField.getText(), localitiesField.getText());
+                Main.addNewRef(firstNameField.getText(), lastNameField.getText(), qualificationField.getText(), Integer.parseInt(allocationsField.getText()), homeField.getText(), localitiesField.getText());
                 dispose();
             }
 
@@ -171,12 +171,12 @@ public class RefereeSingleFrame extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(new JFrame(), "One or more fields are empty.", "Error", JOptionPane.ERROR_MESSAGE);
             }
             else{
-                Test.updateRef(idForm, qualificationField.getText(), homeField.getText(), localitiesField.getText());
+                Main.updateRef(idForm, qualificationField.getText(), homeField.getText(), localitiesField.getText());
                 dispose();
             }
         }
         else if (e.getSource() == deleteButton){
-            Test.deleteRef(idForm);
+            Main.deleteRef(idForm);
             dispose();
         }
     }

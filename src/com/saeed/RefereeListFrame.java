@@ -21,7 +21,7 @@ public class RefereeListFrame extends JFrame implements ActionListener {
                     "Exit Confirmation", JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (confirm == 0) {
-                Test.closeProgram();
+                Main.closeProgram();
                 System.exit(0);
             }
         }
@@ -105,7 +105,7 @@ public class RefereeListFrame extends JFrame implements ActionListener {
         searchButton.addActionListener(this);
 
         //table
-        refTable = new JTable(Test.refereesTable);
+        refTable = new JTable(Main.refereesTable);
         refTable.setRowSelectionAllowed(true);
         refTable.setDefaultEditor(Object.class, null);
 
@@ -145,7 +145,7 @@ public class RefereeListFrame extends JFrame implements ActionListener {
             String fN = firstNameField.getText();
             String lN = lastNameField.getText();
 
-            Test.searchRef(fN, lN);
+            Main.searchRef(fN, lN);
         }
     }
 }
