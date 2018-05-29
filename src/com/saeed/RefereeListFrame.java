@@ -5,10 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class RefereeListFrame extends JFrame implements ActionListener {
-
-    /**
-     *
-     */
+    
     private static final long serialVersionUID = 1L;
 
     //Close function
