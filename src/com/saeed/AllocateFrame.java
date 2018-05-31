@@ -2,15 +2,17 @@ package com.saeed;
 
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class AllocateFrame extends JFrame implements ActionListener {
 
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
+
+    String currentLevel = "";
+    String currentArea = "";
 
     private JPanel mainPanel;
 
@@ -21,7 +23,7 @@ public class AllocateFrame extends JFrame implements ActionListener {
     private JLabel referee1Label;
     private JLabel referee2Label;
 
-    //textfields
+    //text fields
     private JTextField weekField;
 
     //combo-boxes
@@ -34,10 +36,11 @@ public class AllocateFrame extends JFrame implements ActionListener {
     private JButton backButton;
     private JButton allocateButton;
 
-    public AllocateFrame(){
+    public AllocateFrame() {
 
-        String[] areas = { "North", "Center", "South" };
-        String[] levels = { "Junior", "Senior" };
+        String[] areas = {"North", "Center", "South"};
+        String[] levels = {"Junior", "Senior"};
+
 
         setTitle("Add new match");
         setSize(350, 250);
@@ -67,7 +70,7 @@ public class AllocateFrame extends JFrame implements ActionListener {
         allocateButton = new JButton("Add match");
         allocateButton.addActionListener(this);
 
-        add(mainPanel, "North");
+        add(mainPanel, "Central");
 
         mainPanel.add(weekLabel);
         mainPanel.add(weekField);
@@ -88,12 +91,32 @@ public class AllocateFrame extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-        if (e.getSource() == backButton){
+        if (e.getSource() == backButton) {
             dispose();
+        } else if (e.getSource() == levelBox) {
+
+            currentLevel = String.valueOf(levelBox.getSelectedItem());
+            System.err.println(currentLevel);
+
+        } else if (e.getSource() == areaBox) {
+
+            currentArea = String.valueOf(areaBox.getSelectedItem());
+            System.err.println(currentArea);
+
         }
-        else if (e.getSource() == areaBox){
-            System.err.println(areaBox.getSelectedItem());
+    }
+
+    /**
+     * This method takes the current ArrayList of referees and currently entered level/area data to produce
+     * produce new ArrayList of suggested referees
+     **/
+    private ArrayList<Referee> getSuggestedRefs(ArrayList<Referee> currentRefs, String selectedLevel, String selectedArea) {
+        ArrayList<Referee> suggestedRefs = new ArrayList<>();
+
+        for (Referee r : currentRefs) {
+            //insert magic
         }
+        return suggestedRefs;
     }
 
 }
