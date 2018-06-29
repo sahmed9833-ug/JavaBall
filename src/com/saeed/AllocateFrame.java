@@ -91,6 +91,9 @@ public class AllocateFrame extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
+
+        getSuggestedRefs(Main.referees, currentLevel, currentArea);
+
         if (e.getSource() == backButton) {
             dispose();
         } else if (e.getSource() == levelBox) {
@@ -102,7 +105,6 @@ public class AllocateFrame extends JFrame implements ActionListener {
 
             currentArea = String.valueOf(areaBox.getSelectedItem());
             System.err.println(currentArea);
-
         }
     }
 
